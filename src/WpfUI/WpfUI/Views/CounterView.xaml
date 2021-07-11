@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="WpfUI.Views.CounterView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:WpfUI.Views"
+             xmlns:cal="http://www.caliburnproject.org"
+             mc:Ignorable="d" 
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+             TextElement.FontWeight="Regular"
+             TextElement.FontSize="16"
+             TextOptions.TextFormattingMode="Ideal" 
+             TextOptions.TextRenderingMode="Auto"
+             Background="{DynamicResource MaterialDesignPaper}"
+             FontFamily="{materialDesign:MaterialDesignFont}"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel Margin="10" HorizontalAlignment="Center">
+
+        <TextBlock Text="Counter" 
+                   FontSize="36" FontWeight="Medium" Margin="10 5 5 5"/>
+        <TextBlock 
+            Text="This is a simple example of a WPF MVVM Control." 
+            Margin="10 5 10 20"/>
+
+        <StackPanel Margin="10" Orientation="Horizontal">
+            <TextBlock 
+                Text="Current count: " 
+                VerticalAlignment="Center"/>
+            <TextBlock 
+                Text="{Binding CounterValue, Mode=TwoWay}" 
+                FontWeight="ExtraBold"
+                VerticalAlignment="Center"/>
+        </StackPanel>
+        <Button
+            x:Name="Increment"
+            Style="{StaticResource MaterialDesignRaisedDarkButton}"
+            HorizontalAlignment="Left"
+            Content="Increment" 
+            Margin="10"/>
+
+
+    </StackPanel>
+</UserControl>
