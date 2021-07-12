@@ -9,10 +9,12 @@ using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using CleanArchitecture.Application.Common.Attributes;
 
 namespace CleanArchitecture.Application.TodoLists.Queries.GetTodos
 {
-    public class GetTodosQuery : IRequest<TodosVm>
+	[CacheQueryResponse(5000)]
+	public class GetTodosQuery : IRequest<TodosVm>
     {
     }
 
